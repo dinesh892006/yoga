@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Unique Jewelry | Fine Jewelry</title>
+    <meta name="description" content="Shop exquisite fine jewelry online. Discover timeless rings, necklaces, and earrings crafted with unparalleled elegance.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        COMPLIMENTARY OVERNIGHT SHIPPING & RETURNS ON ALL ORDERS
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Mobile Menu Icon -->
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
+            <ul class="nav-links left-links">
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#collections">Collections</a></li>
+            </ul>
+
+            <a href="#" class="logo">
+                YOGA UNIQUE JEWELRY
+            </a>
+
+            <div class="nav-right">
+                <ul class="nav-links right-links">
+                    <li><a href="#about">Maison</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="cart-icon" id="cart-icon">
+                    <span>BAG</span>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Bag</h3>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart-msg">Your shopping bag is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <button class="btn btn-black w-100 checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Hero Section Slider -->
+    <header class="hero slider" id="home">
+        <div class="slide active slide-1">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>High Jewelry</h1>
+                <p>Discover the extraordinary craftsmanship of our new signature collection.</p>
+                <div class="hero-buttons">
+                    <a href="#shop" class="btn btn-white">Discover the Collection</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide slide-2">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Bridal Elegance</h1>
+                <p>Brilliant diamonds crafted to celebrate your eternal love story.</p>
+                <div class="hero-buttons">
+                    <a href="#shop" class="btn btn-white">Shop Engagement</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide slide-3">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Vibrant Sapphires</h1>
+                <p>Immerse yourself in rich, deep colors with our hand-selected center stones.</p>
+                <div class="hero-buttons">
+                    <a href="#shop" class="btn btn-white">View Gemstones</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="slider-controls">
+            <button class="slider-btn prev-btn" id="prevSlide">&#10094;</button>
+            <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+            <button class="slider-btn next-btn" id="nextSlide">&#10095;</button>
+        </div>
+        
+        <!-- Interactive Mouse Wave Canvas -->
+        <canvas id="waveCanvas" class="hero-canvas"></canvas>
+    </header>
+
+    <!-- Shop Section -->
+    <section class="shop-section" id="shop">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Featured Creations</h2>
+                <a href="#" class="view-all">View All Jewelry</a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/jewelry-2.jpg" alt="Radiant Cut Diamond Ring">
+                    </div>
+                    <div class="product-info">
+                        <h3>Diamond Halo Ring</h3>
+                        <p class="product-desc">18K White Gold, 2.50 Carats</p>
+                        <div class="price-row">
+                            <span class="price" data-price="3500">$3,500</span>
+                        </div>
+                        <button class="btn btn-outline add-to-cart w-100">Add to Bag</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/jewelry-3.jpg" alt="Midnight Sapphire Halo Ring">
+                    </div>
+                    <div class="product-info">
+                        <h3>Sapphire & Diamond Ring</h3>
+                        <p class="product-desc">Platinum, Ceylon Sapphire</p>
+                        <div class="price-row">
+                            <span class="price" data-price="2850">$2,850</span>
+                        </div>
+                        <button class="btn btn-outline add-to-cart w-100">Add to Bag</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/jewelry-1.jpg" alt="Classic Solitaire Band">
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic Eternity Band</h3>
+                        <p class="product-desc">18K White Gold, Pavé Set</p>
+                        <div class="price-row">
+                            <span class="price" data-price="1200">$1,200</span>
+                        </div>
+                        <button class="btn btn-outline add-to-cart w-100">Add to Bag</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Excellence Section -->
+    <section class="excellence-section" id="about">
+        <div class="section-container">
+            <div class="excellence-grid">
+                <div class="excellence-image">
+                    <img src="assets/jewelry-3.jpg" alt="Jewelry Craftsmanship">
+                </div>
+                <div class="excellence-text">
+                    <h2>Maison Yoga Unique Jewelry</h2>
+                    <p>For decades, we have sourced only the finest ethical diamonds and gemstones, ensuring every piece reflects unparalleled artistry and dedication to detail.</p>
+                    <p>Our master jewelers hand-craft each setting in our Parisian ateliers to bring out the pure brilliance of every stone we select.</p>
+                    <a href="#" class="btn btn-black" style="margin-top: 2rem;">Discover Our Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-logo">YOGA UNIQUE JEWELRY</h3>
+            </div>
+            <div class="footer-col">
+                <h4>Client Services</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Book an Appointment</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>The Maison</h4>
+                <ul>
+                    <li><a href="#">Our Heritage</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Boutiques</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter-col">
+                <h4>Sign Up</h4>
+                <p>Be the first to know about new high jewelry collections and exclusive events.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email Address" required>
+                    <button type="submit">→</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
+            <p>&copy; 2026 Yoga Unique Jewelry. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
