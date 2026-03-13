@@ -800,10 +800,74 @@ footer {
     
     .nav-container { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    .nav-right { gap: 1.5rem; }
+    .nav-right { gap: 1rem; }
     
-    .hamburger { display: flex; color: var(--white); }
+    .hamburger { 
+        display: flex; 
+        color: var(--white); 
+        z-index: 1010;
+        position: relative;
+        padding: 10px; /* Enhanced touch target */
+        margin-left: -10px;
+    }
+    .hamburger.is-active .line:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .hamburger.is-active .line:nth-child(2) { opacity: 0; }
+    .hamburger.is-active .line:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
     .navbar.scrolled .hamburger { color: var(--black); }
+    
+    /* Mobile Menu Fullscreen Overlay */
+    .navbar.mobile-open {
+        background: var(--white);
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+    }
+    
+    .navbar.mobile-open .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 5rem;
+        gap: 2rem;
+        width: 100%;
+    }
+    
+    .navbar.mobile-open .hamburger .line { background-color: var(--black); }
+    .navbar.mobile-open .logo { color: var(--black); position: absolute; top: 1rem; left: 1.5rem; }
+    
+    .navbar.mobile-open .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+    }
+    
+    .navbar.mobile-open .left-links {
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .navbar.mobile-open .nav-right {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+    }
+    
+    .navbar.mobile-open .nav-links li a { 
+        color: var(--black); 
+        font-size: 1.2rem; 
+        letter-spacing: 2px;
+        padding: 0.5rem 0; /* Enhanced touch target */
+        display: block;
+    }
+    
+    .navbar.mobile-open .cart-icon { 
+        color: var(--black); 
+        font-size: 1.2rem;
+        padding: 0.5rem 0; /* Enhanced touch target */
+    }
     
     .logo { 
         font-size: 0.9rem; 
@@ -811,7 +875,10 @@ footer {
     }
     
     .cart-sidebar { width: 100%; right: -100%; }
-    .cart-header, .cart-items, .cart-footer { padding: 1.5rem; }
+    .cart-header { padding: 1.5rem; }
+    .cart-items { padding: 1.5rem; }
+    .cart-footer { padding: 1.5rem; }
+    .close-cart { padding: 10px; /* Enhanced touch target */ }
     
     .hero { min-height: 500px; }
     .slide-1 { background-image: url('assets/jewelry-1-mobile.jpg'); }
@@ -842,4 +909,35 @@ footer {
         gap: 1rem; 
         text-align: center; 
     }
+}
+
+/* Ultra Mobile (Phones under 480px) */
+@media (max-width: 480px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    
+    .section-container { padding: 3rem 1rem; }
+    .nav-container { padding: 1rem; }
+    
+    .logo { 
+        font-size: 0.75rem; 
+        letter-spacing: 0px; 
+    }
+    .hamburger { transform: scale(0.9); }
+    .cart-icon { font-size: 0.65rem; }
+    
+    .hero { min-height: 100vh; }
+    .hero-content { padding: 0 1rem; bottom: 12%; }
+    .hero-buttons .btn { width: 100%; margin-bottom: 0.5rem; }
+    
+    .slider-btn { display: none; /* Hide arrows on very small screens, rely on dots */ }
+    
+    .product-card { padding: 1rem; }
+    .product-image { height: 260px; margin-bottom: 1.5rem; }
+    
+    .excellence-text { padding: 2rem 1rem; }
+    .excellence-text p { font-size: 1rem; }
+    
+    footer { padding: 3rem 1rem 2rem; }
+    .footer-container { gap: 2rem; margin-bottom: 3rem; }
 }
