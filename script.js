@@ -13,33 +13,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* --- Mobile Menu Toggle --- */
     const hamburger = document.querySelector('.hamburger');
-    const navLinksAll = document.querySelectorAll('.nav-links'); // Gets both left and right links
     
     if(hamburger) {
         hamburger.addEventListener('click', () => {
-            const isActive = hamburger.classList.toggle('is-active');
-            
-            navLinksAll.forEach((ul, index) => {
-                if(isActive){
-                    // Simplified mobile menu for now
-                    ul.style.display = 'flex';
-                    ul.style.flexDirection = 'column';
-                    ul.style.position = 'absolute';
-                    ul.style.top = index === 0 ? '60px' : '200px'; 
-                    ul.style.left = '0';
-                    ul.style.width = '100%';
-                    ul.style.background = '#ffffff';
-                    ul.style.padding = '2rem';
-                    ul.style.zIndex = '900';
-                    ul.querySelectorAll('a').forEach(a => a.style.color = '#000');
-                } else {
-                    ul.style.display = '';
-                    ul.style.position = '';
-                    ul.querySelectorAll('a').forEach(a => a.style.color = '');
-                }
-            });
+            hamburger.classList.toggle('is-active');
+            navbar.classList.toggle('mobile-open');
+            if(navbar.classList.contains('mobile-open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
     }
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbar.classList.contains('mobile-open')) {
+                hamburger.classList.remove('is-active');
+                navbar.classList.remove('mobile-open');
+                document.body.style.overflow = '';
+            }
+        });
+    });
 
     /* --- Shopping Cart Logic --- */
     const cartIcon = document.getElementById('cart-icon');
